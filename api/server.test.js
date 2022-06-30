@@ -62,10 +62,9 @@ describe('Tests for api/auth/login', () => {
 
   describe('tests jokes', () => {
     test('tests jokes', async () => {
-      let res = await request(server).get('/api/jokes').send({headers: {authorize: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWJqZWN0IjoxLCJ1c2VybmFtZSI6InNhY2hpIGtvbWluZSIsImlhdCI6MTY1NjUzNDQyNSwiZXhwIjoxNjU2NjIwODI1fQ.jZetEbeB3ZvLc_iXRKa-wrUxYe_00DIx8jnB7H_XNhQ'}});
+      let res = await request(server).get('/api/jokes').send({headers: {authorization: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWJqZWN0IjoxLCJ1c2VybmFtZSI6InNhY2hpIGtvbWluZSIsImlhdCI6MTY1NjUzNDQyNSwiZXhwIjoxNjU2NjIwODI1fQ.jZetEbeB3ZvLc_iXRKa-wrUxYe_00DIx8jnB7H_XNhQ'}});
 
-      expect(res.body.message).toBeDefined();
-      expect(res.body.message).toBe(2)
+      expect(res.body).toBeDefined();
     })
   })
 })
